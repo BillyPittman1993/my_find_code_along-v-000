@@ -1,8 +1,9 @@
 def my_find(collection)
   i = 0 
-  new_block = []
   while i < collection.length 
-  new_block << yield(collection[i])
+  if yield(collection[i])
+    return collection[i]
+    end
   i += 1 
   end
 end
